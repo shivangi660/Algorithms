@@ -11,6 +11,9 @@ class Solution {
         // Here pattern is that we need to mantain positive value of the price.
         // Can be thought of as Implementation of Kadane's algorithm.
         
+        // need to mantain minSoFar and maxProfit
+        // consoder that you are selling the stock everyday. keep pdating minSoFar and maxProfit
+        
         int minPrice = Integer.MAX_VALUE;
         int profit = 0;
         
