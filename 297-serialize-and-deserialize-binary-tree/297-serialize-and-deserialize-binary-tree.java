@@ -10,6 +10,10 @@
 public class Codec {
 
     // Encodes a tree to a single string.
+    // Serialization Steps
+    //     1. for every node put it into queue.
+    //     2. If node is null, append $ and continue
+    //.    3. else append node.val and push left and right subtree nodes to queue.
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         if(root == null){
@@ -36,6 +40,8 @@ public class Codec {
     }
 
     // Decodes your encoded data to tree.
+    // Deserialization Steps
+    // Recur in array and start from i = 1;
     public TreeNode deserialize(String data) {
         if(data == "")
             return null;
