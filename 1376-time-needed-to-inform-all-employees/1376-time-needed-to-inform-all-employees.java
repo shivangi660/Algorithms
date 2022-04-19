@@ -11,7 +11,7 @@ class Solution {
         }
         
         
-        System.out.println(map.toString());
+        
         class ManagerTime{
             int manager;
             int informTime;
