@@ -1,6 +1,7 @@
 class Solution {
     public int minKnightMoves(int x, int y) {
         // mark visited after pushing the node in the queue.
+        // Avoid implementation of HashSet for visited array instead use 2-d Map Else with Hashset it would give TLE
         int maxLength = 601;
         Deque<int[]> queue = new LinkedList<>();
         
