@@ -1,5 +1,6 @@
 class Solution {
     public int minKnightMoves(int x, int y) {
+        // mark visited after pushing the node in the queue.
         int maxLength = 601;
         Deque<int[]> queue = new LinkedList<>();
         
