@@ -28,9 +28,11 @@ class Solution {
         int[] ans = new int[n - k + 1];
         int count = 0;
         for(int i = 0; i < n ;i++){
+            // invalidating the queue to contain element only from the current window
             if(!q.isEmpty() && q.peek() < i - k + 1){
                 q.removeFirst();
             }
+            // Invalidating the queue to only contain element bigger than the current element.
             while(!q.isEmpty() && nums[q.peekLast()] < nums[i]){
                 q.removeLast();
             }
