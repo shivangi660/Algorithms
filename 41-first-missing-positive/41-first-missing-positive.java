@@ -21,6 +21,7 @@ class Solution {
             }
         }
         
+        // use Index as the key and store the result as +ive and -ive
         for(int i = 0 ;i < nums.length; i++){
             int idx = Math.abs(nums[i]);
             if(idx == nums.length){
