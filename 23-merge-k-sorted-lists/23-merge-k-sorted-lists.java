@@ -16,13 +16,16 @@ class Solution {
         if(lists.length == 1)
             return lists[0];
             
+        // Divide and conquer
         return mergeListsHelper(lists, left, right);
     }
     
     public ListNode mergeListsHelper(ListNode[] lists, int left, int right){
+        // This is the case for one list after merging 2 lists.
         if(left == right){
             return lists[left];
         }
+        // template for divide and conquer
         else if(left < right){
             int mid = left + (right - left)/2;
             ListNode l1 = mergeListsHelper(lists,left, mid);
@@ -44,29 +47,23 @@ class Solution {
         while(l1 != null && l2 != null){
             if(l1.val <= l2.val){
                 if(head == null){
-                    head = l1;
-                    temp = l1;
-                    l1 = l1.next;
+                    head = l1;          
                 }
                 else{
-                    temp.next = l1;
-                    temp = l1;
-                    l1 = l1.next;
-                    
+                    temp.next = l1;        
                 }
+                temp = l1;
+                l1 = l1.next;
             }
             else{
                 if(head == null){
                     head = l2;
-                    temp = l2;
-                    l2 = l2.next;
                 }
                 else{
-                    temp.next = l2;
-                    temp = l2;
-                    l2 = l2.next;
-                    
+                    temp.next = l2; 
                 }
+                temp = l2;
+                l2 = l2.next;
             }
         }
         if(l1 == null){
