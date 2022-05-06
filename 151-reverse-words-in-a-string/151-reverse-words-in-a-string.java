@@ -20,5 +20,11 @@ class Solution {
         
         String ans = sb.toString();
         return ans.substring(0,ans.length() - 1);
+        
+        // Follow up
+        // inplace
+        // 1. Reverse the entire string after removing leading and trailing spaces
+        // 2. Remove the extra spaces in between, 
+        // https://leetcode.com/problems/reverse-words-in-a-string/discuss/47720/Clean-Java-two-pointers-solution-(no-trim(-)-no-split(-)-no-StringBuilder)
     }
 }
