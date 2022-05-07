@@ -4,19 +4,28 @@ class Solution {
         
         // calculate peaks and valleys
         
-        int i = 0;
+       //  int i = 0;
+       //  int maxProfit = 0;
+       //  while(i < prices.length - 1){
+       //      while(i+1 < prices.length && prices[i+1] <= prices[i]){
+       //          i++;
+       //      }
+       //      int peak = i;
+       //      while(i+1 < prices.length && prices[i+1] >= prices[i]){
+       //          i++;
+       //      }
+       //      int valey = i;
+       //      maxProfit = maxProfit + prices[valey] - prices[peak];
+       //  }
+       // return maxProfit; 
+        
+    // single pass solution
         int maxProfit = 0;
-        while(i < prices.length - 1){
-            while(i+1 < prices.length && prices[i+1] <= prices[i]){
-                i++;
+        for(int i = 0; i < prices.length - 1; i++){
+            if(prices[i+1] > prices[i]){
+                maxProfit += prices[i+1] - prices[i];
             }
-            int peak = i;
-            while(i+1 < prices.length && prices[i+1] >= prices[i]){
-                i++;
-            }
-            int valey = i;
-            maxProfit = maxProfit + prices[valey] - prices[peak];
         }
-       return maxProfit; 
+        return maxProfit;
     }
 }
